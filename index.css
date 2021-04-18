@@ -1,0 +1,113 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    padding: 40px;
+    background: #FFFFFF;
+}
+
+.bg-rot { background: #E40422 }
+.bg-schwarz { background: #000000 }
+.bg-weiss { background: #FFFFFF }
+.bg-hellblau { background: #BDCDE7 }
+.bg-mittelblau { background: #7694CE }
+.bg-blau { background: #324FA3 }
+.bg-dunkelblau { background: #13245B }
+.bg-hellgruen { background: #B5D4B7 }
+.bg-mittelgruen { background: #67B18D }
+.bg-gruen { background: #357A5D }
+.bg-dunkelgruen { background: #0E4C38 }
+.bg-gelb { background: #F8ED45 }
+.bg-orange { background: #F39300 }
+.bg-rosa { background: #F5B4CB }
+.bg-violett { background: #988BC2 }
+.bg-schwarz-80 { background: #333333 }
+.bg-schwarz-60 { background: #666666 }
+.bg-schwarz-40 { background: #999999 }
+.bg-schwarz-20 { background: #CCCCCC }
+.bg-schwarz-10 { background: #EFEFEF }
+.bg-schwarz-5 { background: #F2F2F2 }
+
+.stack {
+    list-style-type: none;
+    margin: 20% auto 0;
+    max-width: 34em;
+    padding: 0;
+    position: relative;
+}
+
+.card {
+    box-shadow: 0 0 2rem #888;
+    left: 0;
+    padding: 1.5rem;
+    position: absolute;
+    top: 0;
+    transform: translateY(0) rotate(5deg) translateX(0%) scale(1);
+    transform-origin: 0 0;
+    transition: transform 0.8s cubic-bezier(0.8, 0.2, 0.1, 0.8) 0.1s, background 0.8s linear;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 2;
+}
+
+.card--1st {
+    transform: rotate(0deg) translateX(0%) scale(1);
+    -webkit-user-select: auto;
+    -moz-user-select: auto;
+    -ms-user-select: auto;
+    user-select: auto;
+    z-index: 10;
+}
+
+.card--2nd {
+    transform: translateY(-2rem) rotate(5deg) translateX(1.25rem) scale(.9);
+    z-index: 5;
+}
+
+.card--3rd {
+    -webkit-animation: stash-card 0.8s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+    animation: stash-card 0.8s cubic-bezier(0.8, 0.2, 0.1, 0.8);
+    transform: translateY(-4rem) rotate(10deg) translateX(3rem) scale(.8);
+    z-index: 1;
+}
+
+@-webkit-keyframes stash-card {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+        z-index: 20;
+    }
+    50% {
+        transform: translateY(-110%) rotate(-5deg) translateX(-2rem);
+        z-index: 20;
+    }
+    51% {
+        z-index: 1;
+    }
+    100% {
+        transform: translateY(-4rem) rotate(10deg) translateX(3rem) scale(.8);
+    }
+}
+
+@keyframes stash-card {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+        z-index: 20;
+    }
+    50% {
+        transform: translateY(-110%) rotate(-5deg) translateX(-2rem);
+        z-index: 20;
+    }
+    51% {
+        z-index: 1;
+    }
+    100% {
+        transform: translateY(-4rem) rotate(10deg) translateX(3rem) scale(.8);
+    }
+}
+
+h2 {
+    margin: 0;
+}
