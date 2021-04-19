@@ -7,7 +7,7 @@ body {
     background: #FFFFFF;
 }
 
-.bg-rot { background: #E40422 }
+.bg-rot { background: #E40422; color: #fff; }
 .bg-schwarz { background: #000000 }
 .bg-weiss { background: #FFFFFF }
 .bg-hellblau { background: #BDCDE7 }
@@ -29,12 +29,38 @@ body {
 .bg-schwarz-10 { background: #EFEFEF }
 .bg-schwarz-5 { background: #F2F2F2 }
 
+.faq {
+    list-style: none;
+}
+
+.faq li {
+    margin-bottom: .5rem;
+    cursor: pointer;
+}
+.faq li::before {
+    border: 1px solid #7694CE;
+    border-radius: 50%;
+    content: '?';
+    display: block;
+    margin-bottom: -1.2rem;
+    margin-left: -2rem;
+    text-align: center;
+    width: 1rem;
+}
+
+.faq--answer {
+    display: none;
+}
+
 .stack {
+    left: 0;
     list-style-type: none;
     margin: 20% auto 0;
     max-width: 34em;
     padding: 0;
-    position: relative;
+    position: fixed;
+    right: 0;
+    top: 0;
 }
 
 .card {
@@ -108,6 +134,6 @@ body {
     }
 }
 
-h2 {
+.card--question {
     margin: 0;
 }
