@@ -35,7 +35,6 @@ body {
 
 .faq li {
     margin-bottom: .5rem;
-    cursor: pointer;
 }
 .faq li::before {
     border: 1px solid #7694CE;
@@ -67,6 +66,7 @@ body {
     box-shadow: 0 0 2rem #888;
     left: 0;
     padding: 1.5rem;
+    pointer-events: none;
     position: absolute;
     top: 0;
     transform: translateY(0) rotate(5deg) translateX(0%) scale(1);
@@ -80,6 +80,7 @@ body {
 }
 
 .card--1st {
+    pointer-events: all;
     transform: rotate(0deg) translateX(0%) scale(1);
     -webkit-user-select: auto;
     -moz-user-select: auto;
@@ -132,8 +133,4 @@ body {
     100% {
         transform: translateY(-4rem) rotate(10deg) translateX(3rem) scale(.8);
     }
-}
-
-.card--question {
-    margin: 0;
 }

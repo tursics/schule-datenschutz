@@ -21,29 +21,27 @@ function showQuestion(obj) {
     $('.card--2nd .card--question').html(question);
     $('.card--2nd .card--answer').html(answer);
 
-    var links = $('.card--2nd').find('a');
-    links.click(function(event) {
-        var link = $(this).attr('href');
-        if ((link.length > 0) && (link[0] === '#')) {
-            event.preventDefault();
-            showQuestion($(link));
-        }
-    });
-
     showNextCard();
+}
+
+function showQuestionLink(anchor) {
+    var link = $('li > a[href="' + anchor + '"]');
+    showQuestion(link);
 }
 
 $.fn.initFAQ = function() {
     return this.each(function() {
-        var questions = $(this).find('li');
-
-        questions.on('click', function() {
-            showQuestion(this);
-        });
-
-        var link = $('#start');
-        showQuestion(link);
+        showQuestionLink('#start');
     });
 };
 
+function locationHashChanged() {
+    var link = location.hash;
+    if ((link.length > 0) && (link[0] === '#')) {
+        showQuestionLink(link);
+    }
+}
+
 $('.faq').initFAQ();
+
+window.onhashchange = locationHashChanged;
