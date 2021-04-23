@@ -17,9 +17,13 @@ function showNextCard() {
 function showQuestion(obj) {
     var question = $(obj).find('.faq--question').html();
     var answer = $(obj).find('.faq--answer').html();
+    var background = $(obj).find('.faq--answer').data('bg');
 
     $('.card--2nd .card--question').html(question);
     $('.card--2nd .card--answer').html(answer);
+    $('.card--2nd').removeClass(function(index, className) {
+        return (className.match(new RegExp("\\bbg-\\S+", "g")) || []).join(' ');
+    }).addClass('bg-' + background);
 
     showNextCard();
 }
@@ -31,7 +35,8 @@ function showQuestionLink(anchor) {
 
 $.fn.initFAQ = function() {
     return this.each(function() {
-        showQuestionLink('#start');
+        var hash = location.hash || '#start';
+        showQuestionLink(hash);
     });
 };
 
