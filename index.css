@@ -134,3 +134,37 @@ body {
         transform: translateY(-4rem) rotate(10deg) translateX(3rem) scale(.8);
     }
 }
+
+.button-footer {
+    text-align: right;
+    margin-bottom: 0;
+}
+
+a.button {
+    background: #fff;
+    border: 2px solid #000;
+    color: #000;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin: .5rem 0 0 0;
+    padding: 0 0 0 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+a.button:hover {
+    color: #fff;
+    background-color: #E40422;
+}
+a.button i {
+    background-color: #E40422;
+    border-left: 2px solid #000;
+    color: #fff;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    margin: 0 0 0 1rem;
+    text-align: center;
+    width: 2.5rem;
+}
