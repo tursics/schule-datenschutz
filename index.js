@@ -26,7 +26,7 @@ function showQuestion(obj) {
 
 function showQuestionLink(anchor) {
     var link = $('li > a[href="' + anchor + '"]');
-    showQuestion(link);
+    showQuestion(link.parent());
 }
 
 $.fn.initFAQ = function() {
